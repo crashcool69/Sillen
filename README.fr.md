@@ -186,6 +186,9 @@ et Luma Ultra.
 2. Faites glisser `Sillen.app` dans le dossier **Applications**.
 3. Ouvrez-la. macOS demande alors les deux autorisations.
 
+L'application est signée avec un Developer ID et notarisée par Apple : macOS
+l'ouvre sans l'avertissement « développeur non identifié ».
+
 ## Les deux autorisations, en détail
 
 C'est le seul passage délicat, et il est normal qu'il surprenne : **macOS ne

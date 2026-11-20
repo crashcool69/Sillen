@@ -186,6 +186,9 @@ Ultra.
 2. Drag `Sillen.app` into the **Applications** folder.
 3. Open it. macOS then asks for the two permissions.
 
+The app is signed with a Developer ID and notarized by Apple: macOS opens it
+without the “unidentified developer” warning.
+
 ## The two permissions, in detail
 
 This is the only tricky part, and it is normal for it to be surprising: **macOS
