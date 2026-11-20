@@ -64,7 +64,7 @@ what to do with the new display. Choose **Extend**, never **Mirror**: in mirror
 mode the glasses already show the Mac screen, and the scene has nowhere to go.
 Their name then appears in the **Glasses** card, for instance “VITURE Pro 2”.
 
-**Your head drives the view.** The headset reports the movement of your head;
+**Your head drives the view.** The headset reports the movement of your head.
 Sillen turns it into the camera of the scene and into the cursor. Turn your head
 and the panels stay where you put them. If the scene drifts away, ⌥R recentres
 it.
@@ -94,8 +94,8 @@ Ultra.
 - **Angular spacing** between two screens — 45° by default. Beyond that you run
   out of head turn, hence overlapping panels.
 - **Geometry**: diagonal (20" to 140", as printed on a TV box), width, height
-  and distance for the set; then, per screen, its angle, elevation, own depth and
-  own brightness.
+  and distance for the whole set. Then, per screen, its angle, elevation, own
+  depth and own brightness.
 - **Overlap guard**: when two screens cover each other, Sillen says so and can
   spread them apart.
 - **Saved layouts**, cycled with ⌥L.
@@ -130,7 +130,7 @@ Ultra.
 - **Demo mode**: synthetic movement and demonstration panels, so the app can be
   tried without the glasses.
 - French or English interface.
-- The settings column starts folded; ⌃⌘I unfolds it.
+- The settings column starts folded. ⌃⌘I unfolds it.
 
 ### Keyboard shortcuts
 
@@ -151,9 +151,9 @@ Ultra.
 </p>
 
 <p align="center">
-  <em>The Mac dashboard, running in demo mode. On the left, the glasses and the
-  head-tracking attitude; in the middle, the XR scene itself, exactly as it is
-  sent to the glasses; on the right, the layout of the screens; at the bottom,
+  <em>The Mac dashboard, running in demo mode. On the left are the glasses and
+  the head-tracking attitude. In the middle, the XR scene itself, exactly as it
+  is sent to the glasses. On the right, the layout of the screens. At the bottom,
   the live log.</em>
 </p>
 

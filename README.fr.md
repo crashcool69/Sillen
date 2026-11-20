@@ -64,7 +64,7 @@ du nouvel écran. Choisissez **Étendre**, jamais **Recopier** : en mode Recopie
 les lunettes affichent déjà l'écran du Mac et la scène n'a plus de place. Leur
 nom apparaît alors dans la carte **Lunettes**, par exemple « VITURE Pro 2 ».
 
-**La tête commande la vue.** Le casque signale le mouvement de votre tête ;
+**La tête commande la vue.** Le casque signale le mouvement de votre tête.
 Sillen en fait la caméra de la scène et le curseur. Vous tournez la tête, les
 panneaux restent là où vous les avez posés. Si la scène s'écarte, ⌥R la recentre.
 
@@ -93,8 +93,8 @@ et Luma Ultra.
 - **Écart angulaire** entre deux écrans — 45° par défaut. Au-delà, il faudrait
   tourner la tête plus que de raison : les panneaux se recouvrent.
 - **Géométrie** : diagonale (de 20 à 140 pouces, comme sur la boîte d'un
-  téléviseur), largeur, hauteur et distance pour l'ensemble ; puis, par écran,
-  son angle, son élévation, sa propre profondeur et sa propre luminosité.
+  téléviseur), largeur, hauteur et distance pour l'ensemble. Puis, par écran, son
+  angle, son élévation, sa propre profondeur et sa propre luminosité.
 - **Garde-fou de recouvrement** : si deux écrans se couvrent, Sillen le signale
   et peut les répartir.
 - **Dispositions enregistrées**, parcourues avec ⌥L.
@@ -130,7 +130,7 @@ et Luma Ultra.
 - **Mode démonstration** : mouvement synthétique et panneaux de démonstration,
   pour essayer l'application sans les lunettes.
 - Interface en français ou en anglais.
-- La colonne de réglages arrive repliée ; ⌃⌘I la déplie.
+- La colonne de réglages arrive repliée. ⌃⌘I la déplie.
 
 ### Raccourcis
 
@@ -152,8 +152,8 @@ et Luma Ultra.
 
 <p align="center">
   <em>Le tableau de bord, en mode démonstration. À gauche, les lunettes et
-  l'attitude du suivi de tête ; au centre, la scène XR elle-même, telle qu'elle
-  est envoyée aux lunettes ; à droite, la disposition des écrans ; en bas, le
+  l'attitude du suivi de tête. Au centre, la scène XR elle-même, telle qu'elle
+  est envoyée aux lunettes. À droite, la disposition des écrans. En bas, le
   journal en direct.</em>
 </p>
 
