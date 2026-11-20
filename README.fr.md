@@ -28,16 +28,17 @@ c'est un réglage, pas une reconstruction.
 
 ## Ce qu'on peut faire
 
-**Poser ses écrans où l'on veut.** Un à huit panneaux, disposés sur un arc
-devant vous, à la taille et à la distance de votre choix. Chaque panneau suit une
-vraie fenêtre : si vous changez d'onglet, le panneau change.
+**Poser ses écrans où l'on veut.** Un à douze panneaux, disposés sur un
+arc devant vous, à la taille et à la distance de votre choix. Chaque panneau
+suit une vraie fenêtre : si vous changez d'onglet, le panneau change.
 
 **Regarder sans lever les mains.** Le suivi de tête des lunettes déplace le
 curseur et recadre la scène. Un geste de recentrage ramène tout devant vous si
 vous vous êtes déplacé.
 
-**Poser un écran depuis le téléphone.** La télécommande permet de placer un
-panneau d'un geste, sans quitter le clavier.
+**Une télécommande dans la scène.** ⌃⌘T l'affiche devant vous : le bureau,
+les applications, le nombre d'écrans, la source de chaque panneau, le
+recentrage, le zoom. Tout se règle sans quitter la scène.
 
 **Choisir son décor.** Ciel, sol, panoramas à 360°, fonds animés ou image
 personnelle : chaque élément se règle, et le sol se fond dans l'horizon sans
@@ -49,6 +50,99 @@ du film, le bureau revient exactement comme vous l'aviez laissé.
 
 **Un tableau de bord sur le Mac.** Écrans, panneaux, réglages, état de la
 liaison aux lunettes : tout se pilote depuis le Mac, sans quitter la scène.
+
+## Comment ça marche avec les lunettes
+
+**Les lunettes sont un écran, pas un ordinateur.** Sillen ne leur envoie aucun
+flux vidéo. macOS voit un casque VITURE branché en USB-C comme un écran externe
+ordinaire, et Sillen y dessine sa scène en plein écran. C'est le Mac qui fait
+tout le travail — la 3D, la capture des fenêtres, le décodage des vidéos. Les
+lunettes n'affichent que le résultat.
+
+**Brancher, puis choisir « Étendre ».** Au branchement, macOS demande quoi faire
+du nouvel écran. Choisissez **Étendre**, jamais **Recopier** : en mode Recopier,
+les lunettes affichent déjà l'écran du Mac et la scène n'a plus de place. Leur
+nom apparaît alors dans la carte **Lunettes**, par exemple « VITURE Pro 2 ».
+
+**La tête commande la vue.** Le casque signale le mouvement de votre tête ;
+Sillen en fait la caméra de la scène et le curseur. Vous tournez la tête, les
+panneaux restent là où vous les avez posés. Si la scène s'écarte, ⌥R la recentre.
+
+**Deux fenêtres, deux écrans.** Le tableau de bord reste sur le Mac, dans sa
+propre fenêtre. La scène en occupe une autre, en plein écran sur les lunettes.
+Les deux vivent en même temps : on peut changer un panneau ou lire le journal
+pendant que la scène continue. ⌃⌘F allume la scène, ⌃⌘G la replace sur les
+lunettes après un changement d'écran.
+
+**Toute la gamme.** Le suivi de tête est prévu pour l'ensemble de la gamme
+VITURE : One, Lite, Pro, Luma, Luma Pro, Luma Cyber, Beast, Phantom Beast, Pro 2
+et Luma Ultra.
+
+> Un écran noir en mode Étendre veut presque toujours dire que macOS a retenu un
+> format que la dalle refuse. Le menu **Affichage** contient la commande
+> *Régler l'écran des lunettes (1920×1080 60 Hz)* pour forcer un format accepté.
+
+## Les options
+
+### Les écrans
+
+- **Un à douze écrans**, répartis en arc devant vous.
+- **Quatre points de départ** : un écran unique qui remplit le champ de vision,
+  un mur d'écrans côte à côte, un bureau 360° qui entoure la tête, et le mode
+  cinéma pour un seul écran et un seul film.
+- **Écart angulaire** entre deux écrans — 45° par défaut. Au-delà, il faudrait
+  tourner la tête plus que de raison : les panneaux se recouvrent.
+- **Géométrie** : diagonale (de 20 à 140 pouces, comme sur la boîte d'un
+  téléviseur), largeur, hauteur et distance pour l'ensemble ; puis, par écran,
+  son angle, son élévation, sa propre profondeur et sa propre luminosité.
+- **Garde-fou de recouvrement** : si deux écrans se couvrent, Sillen le signale
+  et peut les répartir.
+- **Dispositions enregistrées**, parcourues avec ⌥L.
+- **Zoom de lecture** : rapproche l'écran visé sans le déplacer.
+
+### Ce qu'un écran montre
+
+- Une **vraie fenêtre** : elle suit l'application et son titre, donc changer
+  d'onglet change le panneau.
+- Un **écran entier** du Mac.
+- Une **tuile produite par l'application** (notifications), qui ne capture rien.
+- La **démonstration**, quand aucune source n'est choisie.
+
+### Le rendu
+
+- Luminosité des écrans, de 25 à 100 %, réglable écran par écran.
+- Cadres, en trois habillages : liseré, cinéma, néon.
+- Grille au sol, recadrage sur le contenu des fenêtres, plafond de fréquence
+  d'affichage.
+
+### Le décor
+
+- Sept ciels et salles : aucun, aurore boréale, ciel étoilé, coucher de soleil,
+  nébuleuse, néon rétro, salle de cinéma.
+- Vos propres panoramas 360° comme ciel, vos propres textures comme sol.
+- Vitesse de dérive, taille du motif au sol, et un panorama distinct pour la
+  séance de cinéma.
+
+### Le suivi et l'interface
+
+- Sensibilité et lissage du suivi de tête, axe de recentrage, raccourci de
+  recentrage.
+- **Mode démonstration** : mouvement synthétique et panneaux de démonstration,
+  pour essayer l'application sans les lunettes.
+- Interface en français ou en anglais.
+- La colonne de réglages arrive repliée ; ⌃⌘I la déplie.
+
+### Raccourcis
+
+| Raccourci | Effet |
+|---|---|
+| ⌃⌘F | Allumer ou éteindre la scène sur les lunettes |
+| ⌃⌘G | Replacer la scène sur les lunettes |
+| ⌃⌘T | Télécommande, dans la scène |
+| ⌃⌘I | Replier ou déplier les réglages |
+| ⌥L | Disposition enregistrée suivante |
+| ⌥R | Recentrer la scène |
+| Échap | Quitter la scène |
 
 ## Aperçu
 

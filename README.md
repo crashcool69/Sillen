@@ -28,16 +28,17 @@ setting, not a rebuild.
 
 ## What you can do
 
-**Place your screens wherever you want.** One to eight panels, arranged on an
-arc in front of you, at the size and distance you choose. Each panel follows a
-real window: change the tab and the panel changes.
+**Place your screens wherever you want.** One to twelve panels, arranged
+on an arc in front of you, at the size and distance you choose. Each panel
+follows a real window: change the tab and the panel changes.
 
 **Look around without lifting a hand.** The glasses' head tracking moves the
 cursor and reframes the scene. A recentring gesture brings everything back in
 front of you once you have moved.
 
-**Place a screen from your phone.** The remote control lets you drop a panel in
-a single gesture, without leaving the keyboard.
+**A remote control inside the scene.** ⌃⌘T brings it up in front of you: your
+desktop, your applications, the number of screens, each panel's source,
+recentring, zoom. Everything is set without leaving the scene.
 
 **Choose your backdrop.** Sky, ground, 360° panoramas, animated backgrounds or
 your own image: every part is adjustable, and the ground blends into the horizon
@@ -49,6 +50,99 @@ movie ends, the desktop comes back exactly as you left it.
 
 **A dashboard on the Mac.** Screens, panels, settings, glasses link status:
 everything is driven from the Mac, without leaving the scene.
+
+## How it works with the glasses
+
+**The glasses are a display, not a computer.** Sillen sends them no video
+stream. macOS sees a VITURE headset plugged into USB-C as an ordinary external
+display, and Sillen draws its scene full screen on it. The Mac does all the
+work — the 3D, the window capture, the video decoding. The glasses only show
+the result.
+
+**Plug in, then choose “Extend”.** When the glasses are connected, macOS asks
+what to do with the new display. Choose **Extend**, never **Mirror**: in mirror
+mode the glasses already show the Mac screen, and the scene has nowhere to go.
+Their name then appears in the **Glasses** card, for instance “VITURE Pro 2”.
+
+**Your head drives the view.** The headset reports the movement of your head;
+Sillen turns it into the camera of the scene and into the cursor. Turn your head
+and the panels stay where you put them. If the scene drifts away, ⌥R recentres
+it.
+
+**Two windows, two screens.** The dashboard stays on the Mac, in its own
+window. The scene is another window, full screen on the glasses. Both are live
+at the same time: you can change a panel or read the log while the scene keeps
+running. ⌃⌘F switches the scene on, ⌃⌘G puts it back on the glasses after a
+screen change.
+
+**The whole range.** Head tracking is provided for the entire VITURE line: One,
+Lite, Pro, Luma, Luma Pro, Luma Cyber, Beast, Phantom Beast, Pro 2 and Luma
+Ultra.
+
+> A black screen while extending almost always means macOS picked a format the
+> panel refuses. The **View** menu has *Set up the glasses display (1920×1080
+> 60 Hz)* to force an accepted one.
+
+## Options
+
+### Screens
+
+- **One to twelve screens**, arranged on an arc in front of you.
+- **Four starting points**: a single screen filling the field of view, a wall of
+  side-by-side screens, a 360° desktop that rings your head, and cinema mode for
+  one screen and one movie.
+- **Angular spacing** between two screens — 45° by default. Beyond that you run
+  out of head turn, hence overlapping panels.
+- **Geometry**: diagonal (20" to 140", as printed on a TV box), width, height
+  and distance for the set; then, per screen, its angle, elevation, own depth and
+  own brightness.
+- **Overlap guard**: when two screens cover each other, Sillen says so and can
+  spread them apart.
+- **Saved layouts**, cycled with ⌥L.
+- **Reading zoom** brings the focused screen closer without moving it.
+
+### What a screen shows
+
+- A **real window**: it follows the application and its title, so changing tab
+  changes the panel.
+- A **whole display** of the Mac.
+- An **app-made tile** (notifications), which captures nothing.
+- The **demonstration**, when no source has been chosen.
+
+### Rendering
+
+- Brightness of the screens, from 25 % to 100 %, adjustable per screen.
+- Borders, in three styles: bezel, cinema, neon.
+- Floor grid, cropping on the window content, frame rate cap.
+
+### Backdrop
+
+- Seven skies and rooms: none, northern lights, starry sky, sunset, nebula,
+  retro neon, cinema hall.
+- Your own 360° panoramas as a sky, your own textures as a floor.
+- Drift speed, floor pattern size, and a separate panorama for the cinema
+  session.
+
+### Tracking and interface
+
+- Sensitivity and smoothing of head tracking, recentring axis and recentring
+  shortcut.
+- **Demo mode**: synthetic movement and demonstration panels, so the app can be
+  tried without the glasses.
+- French or English interface.
+- The settings column starts folded; ⌃⌘I unfolds it.
+
+### Keyboard shortcuts
+
+| Shortcut | What it does |
+|---|---|
+| ⌃⌘F | Scene on the glasses, on or off |
+| ⌃⌘G | Put the scene back on the glasses |
+| ⌃⌘T | Remote control, inside the scene |
+| ⌃⌘I | Fold or unfold the settings |
+| ⌥L | Next saved layout |
+| ⌥R | Recentre the scene |
+| Esc | Leave the scene |
 
 ## Screenshots
 
