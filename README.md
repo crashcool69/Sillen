@@ -5,114 +5,128 @@
 <h1 align="center">Sillen</h1>
 
 <p align="center">
-  Vos fenêtres Mac, posées dans l'espace.<br>
-  Une application macOS pour travailler et regarder des films avec des lunettes XR.
+  Your Mac windows, placed in space.<br>
+  A macOS app for working and watching movies with XR glasses.
+</p>
+
+<p align="center">
+  <a href="README.fr.md">Français</a>
 </p>
 
 ---
 
-## Ce que c'est
+## What it is
 
-Sillen récupère de **vraies fenêtres de votre Mac** — un navigateur, un mail, une
-messagerie, un tableau de bord — et les affiche dans un espace en trois
-dimensions, devant vous. Ce ne sont pas des copies figées : ce sont les fenêtres
-elles-mêmes, mises à jour en continu, avec lesquelles vous interagissez.
+Sillen takes **real windows from your Mac** — a browser, a mail client, a chat
+app, a dashboard — and places them in a three-dimensional space in front of you.
+They are not frozen copies: they are the windows themselves, kept up to date,
+and you interact with them.
 
-Vous tournez la tête, la scène suit. Vous posez un écran à gauche, il reste à
-gauche. Vous en voulez un troisième, un quatrième, plus loin ou plus grand :
-c'est un réglage, pas une reconstruction.
+Turn your head and the scene follows. Put a screen on your left and it stays on
+your left. Want a third one, a fourth one, further away or larger? That is a
+setting, not a rebuild.
 
-## Ce qu'on peut faire
+## What you can do
 
-**Poser ses écrans où l'on veut.** Un à huit panneaux, disposés sur un arc
-devant vous, à la taille et à la distance de votre choix. Chaque panneau suit une
-vraie fenêtre : si vous changez d'onglet, le panneau change.
+**Place your screens wherever you want.** One to eight panels, arranged on an
+arc in front of you, at the size and distance you choose. Each panel follows a
+real window: change the tab and the panel changes.
 
-**Regarder sans lever les mains.** Le suivi de tête des lunettes déplace le
-curseur et recadre la scène. Un geste de recentrage ramène tout devant vous si
-vous vous êtes déplacé.
+**Look around without lifting a hand.** The glasses' head tracking moves the
+cursor and reframes the scene. A recentring gesture brings everything back in
+front of you once you have moved.
 
-**Poser un écran depuis le téléphone.** La télécommande permet de placer un
-panneau d'un geste, sans quitter le clavier.
+**Place a screen from your phone.** The remote control lets you drop a panel in
+a single gesture, without leaving the keyboard.
 
-**Choisir son décor.** Ciel, sol, panoramas à 360°, fonds animés ou image
-personnelle : chaque élément se règle, et le sol se fond dans l'horizon sans
-couture.
+**Choose your backdrop.** Sky, ground, 360° panoramas, animated backgrounds or
+your own image: every part is adjustable, and the ground blends into the horizon
+without a seam.
 
-**Le mode cinéma.** Lancez un film sur Netflix ou Crunchyroll : Sillen reconnaît
-la lecture, bascule dans une salle de cinéma et vous laisse la séance. À la fin
-du film, le bureau revient exactement comme vous l'aviez laissé.
+**Cinema mode.** Start a movie on Netflix or Crunchyroll: Sillen notices the
+playback, switches to a cinema room and leaves you to the screening. When the
+movie ends, the desktop comes back exactly as you left it.
 
-**Un tableau de bord sur le Mac.** Écrans, panneaux, réglages, état de la
-liaison aux lunettes : tout se pilote depuis le Mac, sans quitter la scène.
+**A dashboard on the Mac.** Screens, panels, settings, glasses link status:
+everything is driven from the Mac, without leaving the scene.
 
-## Aperçu
+## Screenshots
 
 <p align="center">
-  <img src="images/cinema-1.png" alt="Sillen en mode cinéma : un panneau posé devant la scène">
+  <img src="images/interface.png" alt="Sillen dashboard: glasses status, XR scene, panel settings and live log">
 </p>
 
 <p align="center">
-  <em>Mode cinéma — le panneau reste fixe dans l'espace, la salle s'installe
-  autour de vous.</em>
+  <em>The Mac dashboard, running in demo mode. On the left, the glasses and the
+  head-tracking attitude; in the middle, the XR scene itself, exactly as it is
+  sent to the glasses; on the right, the layout of the screens; at the bottom,
+  the live log.</em>
 </p>
 
 <p align="center">
-  <img src="images/cinema-2.png" alt="Vue de la salle de cinéma avec le panneau en avant-plan">
+  <img src="images/cinema-1.png" alt="Sillen in cinema mode: a panel placed in front of the scene">
 </p>
 
-## Configuration requise
+<p align="center">
+  <em>Cinema mode — the panel stays fixed in space while the room settles around
+  you.</em>
+</p>
 
-- Un Mac à processeur Apple Silicon
-- macOS 14 ou plus récent
-- Des lunettes VITURE et leur câble
-- L'autorisation « Enregistrement de l'écran » (indispensable : sans elle,
-  chaque panneau reste sur un contenu de démonstration)
-- L'autorisation « Accessibilité » (indispensable pour agir sur une autre
-  application : ramener une fenêtre réduite, envoyer un clic)
+<p align="center">
+  <img src="images/cinema-2.png" alt="View of the cinema room with the panel in the foreground">
+</p>
+
+## Requirements
+
+- An Apple Silicon Mac
+- macOS 14 or later
+- VITURE glasses and their cable
+- The **Screen Recording** permission (required: without it, every panel stays
+  on demo content)
+- The **Accessibility** permission (required to act on another application:
+  bring a minimised window back, send a click)
 
 ## Installation
 
-1. Téléchargez la dernière version depuis l'onglet **Releases** de ce dépôt.
-2. Faites glisser `Sillen.app` dans le dossier **Applications**.
-3. Ouvrez-la. macOS demande alors les deux autorisations.
+1. Download the latest version from the **Releases** tab of this repository.
+2. Drag `Sillen.app` into the **Applications** folder.
+3. Open it. macOS then asks for the two permissions.
 
-## Les deux autorisations, en détail
+## The two permissions, in detail
 
-C'est le seul passage délicat, et il est normal qu'il surprenne : **macOS ne
-propose plus de fenêtre pour l'autorisation d'enregistrement de l'écran**, et le
-bouton « + » des Réglages ne parcourt que le dossier Applications.
+This is the only tricky part, and it is normal for it to be surprising: **macOS
+no longer presents a prompt for the screen recording permission**, and the “+”
+button in System Settings only browses the Applications folder.
 
-Le geste qui fonctionne :
+The gesture that works:
 
-1. Ouvrez **Réglages Système ▸ Confidentialité et sécurité ▸ Enregistrement de
-   l'écran et des sons système**.
-2. Ouvrez le Finder sur le dossier **Applications**, et **faites glisser
-   `Sillen.app` sur la liste** du panneau. Sillen y apparaît.
-3. Cochez-la.
-4. Faites de même dans **Accessibilité** si elle n'y figure pas déjà.
-5. Quittez Sillen (⌘Q) et relancez-la : macOS ne lit ces accords qu'au démarrage
-   d'un processus.
+1. Open **System Settings ▸ Privacy & Security ▸ Screen & System Audio
+   Recording**.
+2. Open the Finder on the **Applications** folder and **drag `Sillen.app` onto
+   the pane's list**. Sillen appears there.
+3. Tick it.
+4. Do the same in **Accessibility** if it is not listed there already.
+5. Quit Sillen (⌘Q) and launch it again: macOS only reads these grants when a
+   process starts.
 
-Ces accords sont ensuite conservés d'une mise à jour à l'autre, tant que
-l'application est signée par le même éditeur.
+These grants are then kept from one update to the next, as long as the app is
+signed by the same developer.
 
-## Mises à jour
+## Updates
 
-Sillen vérifie au lancement, puis une fois par jour, si une version plus récente
-est publiée. Elle se contente de vous **signaler** la nouvelle version et
-d'ouvrir la page de téléchargement : rien ne s'installe sans votre geste.
+Sillen checks at launch, then once a day, whether a newer version has been
+published. It only **tells** you about it and opens the download page: nothing
+installs without your gesture.
 
-## Vie privée
+## Privacy
 
-Tout reste sur votre Mac. Sillen ne transmet ni capture, ni réglage, ni journal,
-et ne demande aucun compte. La seule requête réseau qu'elle émet est la lecture
-d'un petit fichier de version, pour savoir si une mise à jour existe.
+Everything stays on your Mac. Sillen sends no capture, no setting and no log,
+and requires no account. The only network request it makes is to read a small
+version file, to find out whether an update exists.
 
-## Ce dépôt
+## This repository
 
-Ce dépôt contient la présentation de l'application. Le code source n'est pas
-public.
+This repository holds the app's presentation. The source code is not public.
 
-Sillen est en développement actif : les fonctions décrites ici sont celles de la
-version courante, et peuvent évoluer.
+Sillen is in active development: the features described here are those of the
+current version and may change.
