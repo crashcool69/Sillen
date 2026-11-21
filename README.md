@@ -182,12 +182,58 @@ Ultra.
 
 ## Installation
 
-1. Download the latest version from the **Releases** tab of this repository.
-2. Drag `Sillen.app` into the **Applications** folder.
-3. Open it. macOS then asks for the two permissions.
+1. Download `Sillen-0.2-2.dmg` from the **Releases** tab and open it.
+2. Drag **Sillen** onto the **Applications** folder in the window that appears.
+3. Launch it from Applications. macOS then asks for the two permissions.
+
+Launch it from Applications, not from the mounted image or from your Downloads
+folder: macOS otherwise runs the app from a temporary read-only location, where
+the permissions do not stick and updates cannot be applied. A zip of the same
+app is published alongside the image, if you prefer to unzip it yourself.
 
 The app is signed with a Developer ID and notarized by Apple: macOS opens it
 without the “unidentified developer” warning.
+
+## Checking the download
+
+A small app from a developer you have never heard of deserves a check rather
+than blind trust. Two commands are enough:
+
+```sh
+shasum -a 256 Sillen-0.2-2.dmg
+# d7eaddd91632041ee4a53fd2b04d97909fac0bbe8cf27f0b10723c2aa3205017
+
+spctl -a -vvv -t open --context context:primary-signature Sillen-0.2-2.dmg
+# accepted · source=Notarized Developer ID
+```
+
+The first proves the file is the one published here, the second that Apple has
+scanned that exact binary. If a hash differs from the one in the release notes,
+do not install it and open an issue.
+
+## If an antivirus raises an alarm
+
+It can happen, and it says nothing about the app. Sillen does two things that
+security software is built to watch for: it reads the image of your windows, and
+it acts on other applications. A heuristic sees that pattern and calls it
+spyware — wrongly, but understandably. Add a binary published a few days ago,
+signed by a developer with no established reputation, shipping two libraries
+from the glasses manufacturer, and every ingredient of a false positive is
+there.
+
+**Do not disable your antivirus to use Sillen.** Check, instead:
+
+- the hash and the notarization above;
+- the file your antivirus names in its report — the app itself, or one of the
+  two libraries that come with it;
+- what it shows you about network activity: Sillen contacts one address,
+  `raw.githubusercontent.com`, to read a version file.
+
+Then open an issue with the antivirus name, its version, the exact file it
+flagged and the message. A false positive is reported by the developer to the
+vendor — Microsoft, WithSecure, Fortinet, ESET and the others all have a form
+for this — and it disappears in a definition update. Reporting it here as well is
+what gets it fixed.
 
 ## The two permissions, in detail
 

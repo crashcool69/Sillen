@@ -182,12 +182,61 @@ et Luma Ultra.
 
 ## Installation
 
-1. Téléchargez la dernière version depuis l'onglet **Releases** de ce dépôt.
-2. Faites glisser `Sillen.app` dans le dossier **Applications**.
-3. Ouvrez-la. macOS demande alors les deux autorisations.
+1. Téléchargez `Sillen-0.2-2.dmg` depuis l'onglet **Releases** et ouvrez-le.
+2. Faites glisser **Sillen** sur le dossier **Applications** dans la fenêtre qui
+   s'ouvre.
+3. Lancez-la depuis Applications. macOS demande alors les deux autorisations.
+
+Lancez-la depuis Applications, pas depuis l'image disque montée ni depuis
+Téléchargements : macOS l'exécute sinon depuis un emplacement temporaire en
+lecture seule, où les autorisations ne tiennent pas et où les mises à jour ne
+peuvent pas s'appliquer. Un zip de la même application est publié à côté de
+l'image, si vous préférez le décompresser vous-même.
 
 L'application est signée avec un Developer ID et notarisée par Apple : macOS
 l'ouvre sans l'avertissement « développeur non identifié ».
+
+## Vérifier le téléchargement
+
+Une petite application écrite par un développeur dont vous n'avez jamais entendu
+parler mérite une vérification, pas une confiance aveugle. Deux commandes
+suffisent :
+
+```sh
+shasum -a 256 Sillen-0.2-2.dmg
+# d7eaddd91632041ee4a53fd2b04d97909fac0bbe8cf27f0b10723c2aa3205017
+
+spctl -a -vvv -t open --context context:primary-signature Sillen-0.2-2.dmg
+# accepted · source=Notarized Developer ID
+```
+
+La première prouve que le fichier est bien celui publié ici, la seconde qu'Apple
+a analysé ce binaire précis. Si une empreinte diffère de celle indiquée dans les
+notes de version, n'installez pas le fichier et ouvrez une issue.
+
+## Si un antivirus sonne l'alarme
+
+Cela peut arriver, et cela ne dit rien de l'application. Sillen fait deux choses
+que les logiciels de sécurité sont faits pour surveiller : il lit l'image de vos
+fenêtres, et il agit sur d'autres applications. Une heuristique voit ce
+comportement et parle d'espion — à tort, mais on comprend pourquoi. Ajoutez un
+binaire publié depuis quelques jours, signé par un développeur sans réputation
+établie, contenant deux bibliothèques du fabricant de lunettes : tous les
+ingrédients d'un faux positif sont réunis.
+
+**Ne désactivez pas votre antivirus pour utiliser Sillen.** Vérifiez plutôt :
+
+- l'empreinte et la notarisation ci-dessus ;
+- le fichier que votre antivirus nomme dans son rapport — l'application
+  elle-même, ou l'une des deux bibliothèques qui l'accompagnent ;
+- ce qu'il vous montre de l'activité réseau : Sillen ne contacte qu'une adresse,
+  `raw.githubusercontent.com`, pour lire un fichier de version.
+
+Ouvrez ensuite une issue en précisant le nom de l'antivirus, sa version, le
+chemin exact du fichier signalé et le message. Un faux positif, c'est le
+développeur qui le signale à l'éditeur — Microsoft, WithSecure, Fortinet, ESET et
+les autres ont tous un formulaire pour cela — et il disparaît à la mise à jour
+des définitions. Le signaler ici aussi, c'est ce qui permet de le corriger.
 
 ## Les deux autorisations, en détail
 
