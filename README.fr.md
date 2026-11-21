@@ -180,6 +180,27 @@ et Luma Ultra.
 - L'autorisation « Accessibilité » (indispensable pour agir sur une autre
   application : ramener une fenêtre réduite, envoyer un clic)
 
+## Windows
+
+Une version Windows est à l'étude, et je préfère le dire plutôt que de laisser la
+question sans réponse. Rien n'est publié, rien n'a de date, et ce n'est pas une
+promesse.
+
+Pourquoi on ne « refait pas juste une compilation » : Sillen n'existe pas sans
+macOS. Dessiner la scène, lire vos fenêtres, agir sur les fenêtres d'une autre
+application et toute l'interface reposent sur des briques du système qui n'ont
+pas d'équivalent sous Windows. Chacune serait à réécrire intégralement. Ce qui se
+transporte, c'est la géométrie de l'espace, c'est-à-dire la plus petite part du
+travail. Les lunettes, elles, ne sont pas la difficulté. Leur fabricant publie
+aussi ce qu'il faut sous Windows.
+
+Le problème qui reste n'est pas technique. Une seule personne, deux plateformes,
+cela veut dire entretenir deux applications en parallèle, chacune avec ses
+écrans, sa capture et ses défauts à courir après, et qui divergent un peu plus à
+chaque mise à jour. Une seconde version qui traîne derrière n'est pas un service.
+Je l'étudie donc, et je ne la commencerai que si je peux la faire correctement.
+D'ici là, Sillen est une application macOS.
+
 ## Installation
 
 1. Téléchargez `Sillen-0.2-2.dmg` depuis l'onglet **Releases** et ouvrez-le.
@@ -253,6 +274,26 @@ développeur qui le signale à l'éditeur — Microsoft, WithSecure, Fortinet, E
 les autres ont tous un formulaire pour cela — et il disparaît à la mise à jour
 des définitions. Le signaler ici aussi, c'est ce qui permet de le corriger.
 
+## Vérifier avec d'autres moteurs
+
+Si vous voulez un avis qui ne vienne pas de moi, déposez le fichier téléchargé sur
+VirusTotal ou sur MetaDefender. Les deux le passent dans des dizaines de moteurs à
+la fois et affichent chaque verdict séparément.
+
+Lisez cette liste dans son ensemble. Un fichier signé et notarisé par Apple,
+signalé par un ou deux moteurs sur plusieurs dizaines, c'est un moteur qui n'a
+jamais vu cette application. Le comportement même qui rend Sillen utile — lire
+l'image de vos fenêtres, agir sur une autre application — est ce qu'une telle
+heuristique qualifie de suspect. Une douzaine de moteurs nommant la même famille
+de menace, c'est autre chose, et je veux qu'on me le signale.
+
+Une précaution. Ces services conservent ce qu'on leur envoie et le partagent avec
+des partenaires. Ce que vous leur donnez, c'est l'application, déjà publique :
+rien de vous n'y est exposé. N'y déposez pas une capture de votre bureau ni un
+document, seulement `Sillen-0.2-2.dmg` ou `Sillen-0.2-2.zip`. Les empreintes
+ci-dessus servent à vérifier que vous avez analysé le même fichier que celui que
+j'ai publié.
+
 ## Les deux autorisations, en détail
 
 C'est le seul passage délicat, et il est normal qu'il surprenne : **macOS ne
@@ -285,10 +326,38 @@ Tout reste sur votre Mac. Sillen ne transmet ni capture, ni réglage, ni journal
 et ne demande aucun compte. La seule requête réseau qu'elle émet est la lecture
 d'un petit fichier de version, pour savoir si une mise à jour existe.
 
-## Ce dépôt
+## Pourquoi seulement l'application, et pourquoi pas l'App Store
 
-Ce dépôt contient la présentation de l'application. Le code source n'est pas
-public.
+Ce dépôt contient la présentation de l'application, pas son code source. Je sais
+exactement où le doute commence, parce qu'il commencerait aussi chez moi : une
+application qu'on ne peut pas lire est une application à laquelle il faut faire
+confiance. Ce que je peux mettre à la place du code est sur cette page. Le
+téléchargement est contrôlé par Apple avant publication et vérifiable par vous
+après. La page dit ce que l'application fait, ce qu'elle demande à votre Mac, ce
+qu'elle envoie sur le réseau et ce qu'elle garde sur le disque.
+
+La raison est simple. Sillen est le travail d'une seule personne, et sa valeur
+tient aux heures passées à faire tenir ensemble la capture des fenêtres, le suivi
+de tête et la scène. Publier le code ne rendrait pas l'application plus sûre,
+puisqu'Apple l'analyse déjà. Cela donnerait simplement le travail.
+
+L'App Store est une autre affaire, et ce n'est pas un choix de ma part. Sillen
+doit agir sur d'autres applications, par exemple ramener une fenêtre réduite ou
+transmettre un clic à un panneau. Les applications vendues sur l'App Store
+s'exécutent dans un environnement fermé qui refuse précisément cet accès. Je l'ai
+vérifié sur l'application elle-même plutôt que de le supposer. Un Sillen qui
+renoncerait à agir sur les fenêtres serait un simple afficheur, incapable
+d'utiliser ce qu'il montre. Je publie donc la version qui fonctionne, ici, et
+j'explique comment elle est contrôlée.
+
+## Personne n'est obligé de l'installer
+
+Rien ne vous oblige à installer quoi que ce soit. Sillen ne demande aucun compte,
+aucun abonnement et aucune de vos données. Elle est aussi fournie sans aucune
+garantie : telle quelle, utilisée à vos risques, et elle peut cesser d'être mise à
+jour demain si j'arrête de m'en occuper. Si elle ne vous convient pas, glissez-la
+à la corbeille et supprimez `~/Library/Application Support/Sillen`. Il ne reste
+rien sur votre Mac.
 
 Sillen est en développement actif : les fonctions décrites ici sont celles de la
-version courante, et peuvent évoluer.
+version courante et peuvent évoluer.

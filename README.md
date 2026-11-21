@@ -180,6 +180,26 @@ Ultra.
 - The **Accessibility** permission (required to act on another application:
   bring a minimised window back, send a click)
 
+## Windows
+
+A Windows version is being studied, and I would rather say so than leave the
+question unanswered. Nothing is published, nothing has a date, and it is not a
+promise.
+
+Why it cannot simply be built again: Sillen does not exist without macOS.
+Drawing the scene, reading your windows, acting on the windows of another
+application and the whole interface rest on parts of the system that have no
+equivalent on Windows. Each of them would have to be written again from scratch.
+What carries over is the geometry of the space, which is the smallest share of
+the work. The glasses are not the difficulty. Their manufacturer publishes what
+is needed on Windows as well.
+
+What remains is not technical. One person, two platforms, means maintaining two
+applications side by side, each with its own screens, its own capture and its own
+faults to chase, and drifting a little further apart with every update. A second
+version that lags behind is not a service. So I am looking at it, and I will only
+start it if I can do it properly. Until then, Sillen is a macOS app.
+
 ## Installation
 
 1. Download `Sillen-0.2-2.dmg` from the **Releases** tab and open it.
@@ -250,6 +270,25 @@ vendor — Microsoft, WithSecure, Fortinet, ESET and the others all have a form
 for this — and it disappears in a definition update. Reporting it here as well is
 what gets it fixed.
 
+## Scanning it with other engines
+
+If you want an opinion that does not come from me, upload the file you downloaded
+to VirusTotal or MetaDefender. Both run it through dozens of engines at once and
+show you each verdict separately.
+
+Read that list as a whole. A file that Apple has signed and notarized, flagged by
+one or two engines out of several dozen, is an engine that has never seen this
+app. The very behaviour that makes Sillen useful — reading the image of your
+windows, acting on another application — is what such a heuristic reports as
+suspicious. A dozen engines naming the same threat family is a different matter,
+and I want to be told about it.
+
+One caution. These services keep what is sent to them and share it with partners.
+What you send is the app, which is already public, so nothing of yours is
+exposed. Do not upload a screenshot of your desktop or a document, only
+`Sillen-0.2-2.dmg` or `Sillen-0.2-2.zip`. The hashes above are there to confirm
+that you scanned the same file I published.
+
 ## The two permissions, in detail
 
 This is the only tricky part, and it is normal for it to be surprising: **macOS
@@ -282,9 +321,35 @@ Everything stays on your Mac. Sillen sends no capture, no setting and no log,
 and requires no account. The only network request it makes is to read a small
 version file, to find out whether an update exists.
 
-## This repository
+## Why the app only, and why not the App Store
 
-This repository holds the app's presentation. The source code is not public.
+This repository holds the app's presentation, not its source code. I know exactly
+where the doubt starts, because it would start with me too: an application you
+cannot read is an application you have to take on faith. What I can put in place
+of the code is on this page. The download is checked by Apple before publication
+and can be checked by you afterwards. The page says what the app does, what it
+asks your Mac for, what it sends over the network and what it keeps on disk.
+
+The reason is simple. Sillen is one person's work, and its value lies in the hours
+spent making window capture, head tracking and the scene hold together.
+Publishing the code would not make the app safer, since Apple already scans it. It
+would only give away the work.
+
+The App Store is another matter, and it is not a choice I made. Sillen has to act
+on other applications, for instance bringing back a minimised window or passing a
+click to a panel. Apps sold on the App Store run in a closed environment that
+refuses exactly that access. I checked it on the app itself rather than taking it
+on principle. A Sillen that gave up acting on windows would be a viewer, unable to
+use what it displays. So I ship the version that works, here, and I explain how it
+is checked.
+
+## Nobody has to install it
+
+Nothing obliges you to install anything. Sillen asks for no account, no
+subscription and none of your data. It also comes with no warranty of any kind:
+it is offered as it is, used at your own risk, and it may stop being maintained
+tomorrow if I stop working on it. If it does not suit you, drag it to the Trash
+and delete `~/Library/Application Support/Sillen`. Nothing remains on your Mac.
 
 Sillen is in active development: the features described here are those of the
 current version and may change.
