@@ -199,20 +199,35 @@ l'ouvre sans l'avertissement « développeur non identifié ».
 ## Vérifier le téléchargement
 
 Une petite application écrite par un développeur dont vous n'avez jamais entendu
-parler mérite une vérification, pas une confiance aveugle. Deux commandes
-suffisent :
+parler mérite une vérification, pas une confiance aveugle — mais une empreinte
+ne couvre que **le fichier exact** téléchargé, pas l'application qu'il contient.
+Il y a donc une empreinte par téléchargement, et les deux diffèrent par
+construction.
 
 ```sh
+# si vous avez pris l'image disque
 shasum -a 256 Sillen-0.2-2.dmg
 # d7eaddd91632041ee4a53fd2b04d97909fac0bbe8cf27f0b10723c2aa3205017
 
-spctl -a -vvv -t open --context context:primary-signature Sillen-0.2-2.dmg
+# si vous avez pris le zip
+shasum -a 256 Sillen-0.2-2.zip
+# f6c31135c024104305d80074491e9242768ac6961ae110f038f91655b9e39043
+```
+
+Si Safari a déjà décompressé l'archive à votre place, calculez l'empreinte du
+fichier d'origine dans Téléchargements avant de l'ouvrir. S'il n'est plus là,
+sautez l'empreinte et vérifiez plutôt l'application installée : c'est un dossier,
+une empreinte n'y veut rien dire, mais la signature si :
+
+```sh
+codesign --verify --deep --strict --verbose=2 Sillen.app
+spctl -a -vvv -t exec Sillen.app
 # accepted · source=Notarized Developer ID
 ```
 
-La première prouve que le fichier est bien celui publié ici, la seconde qu'Apple
-a analysé ce binaire précis. Si une empreinte diffère de celle indiquée dans les
-notes de version, n'installez pas le fichier et ouvrez une issue.
+Ce verdict vient d'Apple, pas de moi : il prouve que la copie présente dans vos
+applications est celle que j'ai signée et qu'Apple a analysée. Si une empreinte
+diffère de celles ci-dessus, n'installez pas le fichier et ouvrez une issue.
 
 ## Si un antivirus sonne l'alarme
 

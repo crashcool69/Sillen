@@ -197,19 +197,34 @@ without the “unidentified developer” warning.
 ## Checking the download
 
 A small app from a developer you have never heard of deserves a check rather
-than blind trust. Two commands are enough:
+than blind trust — but a hash covers **one exact file**, the archive you
+downloaded, not the app inside it. There is therefore one hash per download,
+and the two differ on purpose.
 
 ```sh
+# if you took the disk image
 shasum -a 256 Sillen-0.2-2.dmg
 # d7eaddd91632041ee4a53fd2b04d97909fac0bbe8cf27f0b10723c2aa3205017
 
-spctl -a -vvv -t open --context context:primary-signature Sillen-0.2-2.dmg
+# if you took the zip
+shasum -a 256 Sillen-0.2-2.zip
+# f6c31135c024104305d80074491e9242768ac6961ae110f038f91655b9e39043
+```
+
+If Safari has already unzipped the archive for you, hash the original file from
+your Downloads folder before opening it. If it is gone, skip the hash and check
+the installed app instead — it is a folder, so a hash means nothing there, but
+the signature does:
+
+```sh
+codesign --verify --deep --strict --verbose=2 Sillen.app
+spctl -a -vvv -t exec Sillen.app
 # accepted · source=Notarized Developer ID
 ```
 
-The first proves the file is the one published here, the second that Apple has
-scanned that exact binary. If a hash differs from the one in the release notes,
-do not install it and open an issue.
+That verdict comes from Apple, not from me: it proves the copy in your
+Applications folder is the one I signed and Apple scanned. If a hash ever
+differs from the one above, do not install the file and open an issue.
 
 ## If an antivirus raises an alarm
 
