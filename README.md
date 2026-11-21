@@ -237,8 +237,8 @@ the installed app instead — it is a folder, so a hash means nothing there, but
 the signature does:
 
 ```sh
-codesign --verify --deep --strict --verbose=2 Sillen.app
-spctl -a -vvv -t exec Sillen.app
+codesign --verify --deep --strict --verbose=2 /Applications/Sillen.app
+spctl -a -v -t exec /Applications/Sillen.app
 # accepted · source=Notarized Developer ID
 ```
 
@@ -248,13 +248,13 @@ differs from the one above, do not install the file and open an issue.
 
 ## If an antivirus raises an alarm
 
-It can happen, and it says nothing about the app. Sillen does two things that
-security software is built to watch for: it reads the image of your windows, and
-it acts on other applications. A heuristic sees that pattern and calls it
-spyware — wrongly, but understandably. Add a binary published a few days ago,
-signed by a developer with no established reputation, shipping two libraries
-from the glasses manufacturer, and every ingredient of a false positive is
-there.
+It can happen, and it is not, by itself, evidence about what the app does.
+Sillen does two things that security software is built to watch for: it reads the
+image of your windows, and it acts on other applications. A heuristic sees that
+pattern and calls it spyware. That is the usual scenario, not a proof. Add a
+binary published a few days ago, signed by a developer with no established
+reputation, shipping two libraries from the glasses manufacturer, and there is
+plenty there to produce a false positive.
 
 **Do not disable your antivirus to use Sillen.** Check, instead:
 
@@ -276,12 +276,24 @@ If you want an opinion that does not come from me, upload the file you downloade
 to VirusTotal or MetaDefender. Both run it through dozens of engines at once and
 show you each verdict separately.
 
-Read that list as a whole. A file that Apple has signed and notarized, flagged by
-one or two engines out of several dozen, is an engine that has never seen this
-app. The very behaviour that makes Sillen useful — reading the image of your
-windows, acting on another application — is what such a heuristic reports as
-suspicious. A dozen engines naming the same threat family is a different matter,
-and I want to be told about it.
+A detection is not a verdict by itself. Read the list as a whole, and look at
+three things.
+
+- **How many engines, and which ones.** One or two out of several dozen, on a
+  file Apple has signed and notarized, more often points at a single engine's own
+  heuristic than at a find the others all missed. It is not proof either way.
+- **Which file was named.** The app itself, or one of the two libraries that come
+  with it, which are supplied by the glasses manufacturer and identical for every
+  user of its software.
+- **What the engine calls it.** A generic name — heuristic, generic, machine
+  learning attribute — describes a behaviour, and a behaviour is exactly what
+  Sillen looks like from outside. A precise family name, repeated across engines
+  and scans, is another matter and I want to be told about it.
+
+If your scan falls in that last case, open an issue with the link to the report.
+A heuristic detection is reported to the vendor and corrected in a definition
+update. A real find would remain a real find, and I would rather learn about it
+that way.
 
 One caution. These services keep what is sent to them and share it with partners.
 What you send is the app, which is already public, so nothing of yours is
@@ -330,18 +342,27 @@ of the code is on this page. The download is checked by Apple before publication
 and can be checked by you afterwards. The page says what the app does, what it
 asks your Mac for, what it sends over the network and what it keeps on disk.
 
-The reason is simple. Sillen is one person's work, and its value lies in the hours
-spent making window capture, head tracking and the scene hold together.
-Publishing the code would not make the app safer, since Apple already scans it. It
-would only give away the work.
+The reason for keeping the code is simple, and I will not dress it up. Sillen is
+one person's work, and its value lies in the hours spent making window capture,
+head tracking and the scene hold together. I keep it because it is that work.
+
+What I will not claim is that this choice is free. Apple's notarization proves
+that the file you downloaded is the one I signed, and that the scanner found
+nothing in it. It is not an audit of what the app does while it runs, and it does
+not replace someone reading the code. A reader would know more than you can know
+today. That is the price of keeping the source, and I prefer to name it rather
+than hide it behind a signature.
 
 The App Store is another matter, and it is not a choice I made. Sillen has to act
 on other applications, for instance bringing back a minimised window or passing a
-click to a panel. Apps sold on the App Store run in a closed environment that
-refuses exactly that access. I checked it on the app itself rather than taking it
-on principle. A Sillen that gave up acting on windows would be a viewer, unable to
-use what it displays. So I ship the version that works, here, and I explain how it
-is checked.
+click to a panel. Apps sold on the App Store run inside a sandbox, and that
+sandbox does not allow them to act on the windows of another application. I tried
+it on the app itself: with the App Store entitlements and the sandbox active, the
+system refuses before the permission request can even be shown. I am not saying
+that no app will ever be able to do this. I am saying that Sillen, as it stands,
+is not compatible with those constraints, and that a version giving up acting on
+windows would be a viewer, unable to use what it displays. So I ship the version
+that works, here, and I explain how it is checked.
 
 ## Nobody has to install it
 

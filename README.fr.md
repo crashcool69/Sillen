@@ -241,8 +241,8 @@ sautez l'empreinte et vérifiez plutôt l'application installée : c'est un doss
 une empreinte n'y veut rien dire, mais la signature si :
 
 ```sh
-codesign --verify --deep --strict --verbose=2 Sillen.app
-spctl -a -vvv -t exec Sillen.app
+codesign --verify --deep --strict --verbose=2 /Applications/Sillen.app
+spctl -a -v -t exec /Applications/Sillen.app
 # accepted · source=Notarized Developer ID
 ```
 
@@ -252,13 +252,14 @@ diffère de celles ci-dessus, n'installez pas le fichier et ouvrez une issue.
 
 ## Si un antivirus sonne l'alarme
 
-Cela peut arriver, et cela ne dit rien de l'application. Sillen fait deux choses
-que les logiciels de sécurité sont faits pour surveiller : il lit l'image de vos
-fenêtres, et il agit sur d'autres applications. Une heuristique voit ce
-comportement et parle d'espion — à tort, mais on comprend pourquoi. Ajoutez un
-binaire publié depuis quelques jours, signé par un développeur sans réputation
-établie, contenant deux bibliothèques du fabricant de lunettes : tous les
-ingrédients d'un faux positif sont réunis.
+Cela peut arriver, et ce n'est pas, à soi seul, une information sur ce que fait
+l'application. Sillen fait deux choses que les logiciels de sécurité sont faits
+pour surveiller : il lit l'image de vos fenêtres, et il agit sur d'autres
+applications. Une heuristique voit ce comportement et parle d'espion. C'est le
+scénario le plus courant, ce n'est pas une preuve. Ajoutez un binaire publié
+depuis quelques jours, signé par un développeur sans réputation établie, contenant
+deux bibliothèques du fabricant de lunettes : il y a de quoi produire un faux
+positif.
 
 **Ne désactivez pas votre antivirus pour utiliser Sillen.** Vérifiez plutôt :
 
@@ -280,12 +281,26 @@ Si vous voulez un avis qui ne vienne pas de moi, déposez le fichier télécharg
 VirusTotal ou sur MetaDefender. Les deux le passent dans des dizaines de moteurs à
 la fois et affichent chaque verdict séparément.
 
-Lisez cette liste dans son ensemble. Un fichier signé et notarisé par Apple,
-signalé par un ou deux moteurs sur plusieurs dizaines, c'est un moteur qui n'a
-jamais vu cette application. Le comportement même qui rend Sillen utile — lire
-l'image de vos fenêtres, agir sur une autre application — est ce qu'une telle
-heuristique qualifie de suspect. Une douzaine de moteurs nommant la même famille
-de menace, c'est autre chose, et je veux qu'on me le signale.
+Une détection n'est pas un verdict en soi. Lisez la liste dans son ensemble, et
+regardez trois choses.
+
+- **Combien de moteurs, et lesquels.** Un ou deux sur plusieurs dizaines, sur un
+  fichier signé et notarisé par Apple, désigne le plus souvent l'heuristique
+  propre à un seul moteur plutôt qu'une trouvaille que tous les autres auraient
+  manquée. Ce n'est pas une preuve non plus.
+- **Quel fichier est nommé.** L'application elle-même, ou l'une des deux
+  bibliothèques qui l'accompagnent, lesquelles sont fournies par le fabricant de
+  lunettes et identiques pour tous les utilisateurs de ses logiciels.
+- **Ce que le moteur annonce.** Un nom générique — heuristique, générique,
+  attribut d'apprentissage automatique — décrit un comportement, et un
+  comportement, c'est exactement ce que Sillen a l'air d'être vu de l'extérieur.
+  Un nom de famille précis, répété d'un moteur et d'une analyse à l'autre, c'est
+  autre chose, et je veux en être informé.
+
+Si votre analyse tombe dans ce dernier cas, ouvrez une issue avec le lien du
+rapport. Une détection heuristique se signale à l'éditeur et se corrige à la mise
+à jour des définitions. Une vraie trouvaille resterait une vraie trouvaille, et je
+préfère l'apprendre ainsi.
 
 Une précaution. Ces services conservent ce qu'on leur envoie et le partagent avec
 des partenaires. Ce que vous leur donnez, c'est l'application, déjà publique :
@@ -336,19 +351,31 @@ téléchargement est contrôlé par Apple avant publication et vérifiable par v
 après. La page dit ce que l'application fait, ce qu'elle demande à votre Mac, ce
 qu'elle envoie sur le réseau et ce qu'elle garde sur le disque.
 
-La raison est simple. Sillen est le travail d'une seule personne, et sa valeur
-tient aux heures passées à faire tenir ensemble la capture des fenêtres, le suivi
-de tête et la scène. Publier le code ne rendrait pas l'application plus sûre,
-puisqu'Apple l'analyse déjà. Cela donnerait simplement le travail.
+La raison de garder le code est simple, et je ne vais pas l'habiller. Sillen est
+le travail d'une seule personne, et sa valeur tient aux heures passées à faire
+ttenir ensemble la capture des fenêtres, le suivi de tête et la scène. Je le garde
+parce que c'est ce travail.
+
+Ce que je ne prétends pas, c'est que ce choix soit gratuit. La notarisation
+d'Apple prouve que le fichier téléchargé est celui que j'ai signé, et que
+l'analyse n'y a rien trouvé. Ce n'est pas un audit de ce que l'application fait
+quand elle tourne, et cela ne remplace pas quelqu'un qui lirait le code. Un
+lecteur en saurait plus que ce que vous pouvez savoir aujourd'hui. C'est le prix
+du code gardé, et je préfère le nommer plutôt que le cacher derrière une
+signature.
 
 L'App Store est une autre affaire, et ce n'est pas un choix de ma part. Sillen
 doit agir sur d'autres applications, par exemple ramener une fenêtre réduite ou
 transmettre un clic à un panneau. Les applications vendues sur l'App Store
-s'exécutent dans un environnement fermé qui refuse précisément cet accès. Je l'ai
-vérifié sur l'application elle-même plutôt que de le supposer. Un Sillen qui
-renoncerait à agir sur les fenêtres serait un simple afficheur, incapable
-d'utiliser ce qu'il montre. Je publie donc la version qui fonctionne, ici, et
-j'explique comment elle est contrôlée.
+s'exécutent dans un bac à sable, et ce bac à sable ne les autorise pas à agir sur
+les fenêtres d'une autre application. Je l'ai essayé sur l'application elle-même,
+avec le bac à sable activé comme le fait la boutique : le système refuse avant
+même que la demande d'autorisation puisse s'afficher. Je ne dis pas qu'aucune
+application ne pourra jamais le faire. Je dis que Sillen, en l'état, n'est pas
+compatible avec ces contraintes, et qu'une version qui renoncerait à agir sur les
+fenêtres serait un simple afficheur, incapable d'utiliser ce qu'il montre. Je
+publie donc la version qui fonctionne, ici, et j'explique comment elle est
+contrôlée.
 
 ## Personne n'est obligé de l'installer
 
