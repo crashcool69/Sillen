@@ -242,8 +242,9 @@ spctl -a -v -t exec /Applications/Sillen.app
 # accepted · source=Notarized Developer ID
 ```
 
-That verdict comes from Apple, not from me: it proves the copy in your
-Applications folder is the one I signed and Apple scanned. If a hash ever
+That verdict comes from Apple, not from me: Gatekeeper checks the signature, the
+notarization and the ticket, and accepts the copy. What it does not do is compare
+your copy with the file on this page — only the hash does that. If a hash ever
 differs from the one above, do not install the file and open an issue.
 
 ## If an antivirus raises an alarm
@@ -292,8 +293,8 @@ three things.
 
 If your scan falls in that last case, open an issue with the link to the report.
 A heuristic detection can be reported to the vendor, and it often disappears in a
-definition update. A real detection would not disappear, and it would have to be
-dealt with. I would rather learn about that from you.
+definition update. A detection that holds up calls for an investigation and,
+usually, a fix. I would rather learn about it from you.
 
 One caution. These services keep what is sent to them and share it with partners.
 What you send is the app, which is already public, so nothing of yours is

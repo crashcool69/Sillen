@@ -246,9 +246,11 @@ spctl -a -v -t exec /Applications/Sillen.app
 # accepted · source=Notarized Developer ID
 ```
 
-Ce verdict vient d'Apple, pas de moi : il prouve que la copie présente dans vos
-applications est celle que j'ai signée et qu'Apple a analysée. Si une empreinte
-diffère de celles ci-dessus, n'installez pas le fichier et ouvrez une issue.
+Ce verdict vient d'Apple, pas de moi : Gatekeeper vérifie la signature, la
+notarisation et le ticket, et accepte la copie. Ce qu'il ne fait pas, c'est
+comparer votre copie avec le fichier de cette page. Pour cela, il y a l'empreinte.
+Si une empreinte diffère de celles ci-dessus, n'installez pas le fichier et
+ouvrez une issue.
 
 ## Si un antivirus sonne l'alarme
 
@@ -300,8 +302,9 @@ regardez trois choses.
 
 Si votre analyse tombe dans ce dernier cas, ouvrez une issue avec le lien du
 rapport. Une détection heuristique peut être signalée à l'éditeur, et elle
-disparaît souvent à la mise à jour des définitions. Une détection réelle ne
-disparaîtra pas, et il faudra la traiter. Je préfère l'apprendre de vous.
+disparaît souvent à la mise à jour des définitions. Une détection qui se confirme
+demande une enquête et, le plus souvent, un correctif. Je préfère l'apprendre de
+vous.
 
 Une précaution. Ces services conservent ce qu'on leur envoie et le partagent avec
 des partenaires. Ce que vous leur donnez, c'est l'application, déjà publique :
