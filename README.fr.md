@@ -345,6 +345,20 @@ Tout reste sur votre Mac. Sillen ne transmet ni capture, ni réglage, ni journal
 et ne demande aucun compte. La seule requête réseau qu'elle émet est la lecture
 d'un petit fichier de version, pour savoir si une mise à jour existe.
 
+## Avec quoi c'est fait
+
+Sillen est écrit en Swift et s'appuie sur les frameworks du système plutôt que sur
+du code tiers. La scène est dessinée avec Metal, l'interface avec AppKit et
+SwiftUI, la capture des fenêtres avec ScreenCaptureKit, et l'action sur les autres
+applications passe par l'interface d'accessibilité du système. Le décodage vidéo
+revient à AVFoundation. Les lunettes sont jointes par deux bibliothèques fournies
+par leur fabricant, et par rien d'autre.
+
+Deux remarques. La géométrie de l'espace est la seule partie qui se passe de
+macOS, et elle est testée à part. Et l'application ne dépend d'aucun framework
+tiers en dehors de ces deux bibliothèques : tout le reste vient du système ou a
+été écrit pour Sillen.
+
 ## Pourquoi seulement l'application, et pourquoi pas l'App Store
 
 Ce dépôt contient la présentation de l'application, pas son code source. Je sais

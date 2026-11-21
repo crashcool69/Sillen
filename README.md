@@ -334,6 +334,20 @@ Everything stays on your Mac. Sillen sends no capture, no setting and no log,
 and requires no account. The only network request it makes is to read a small
 version file, to find out whether an update exists.
 
+## What it is built with
+
+Sillen is written in Swift and leans on the system's own frameworks rather than
+on third-party code. The scene is drawn with Metal, the interface with AppKit and
+SwiftUI, window capture with ScreenCaptureKit, and the action on other
+applications goes through the system's accessibility interface. Video decoding is
+AVFoundation. The glasses are reached through two libraries supplied by their
+manufacturer, and through nothing else.
+
+Two remarks. The geometry of the space is the only part that stands apart from
+macOS, and it is tested on its own. And the app depends on no third-party
+framework besides those two libraries: everything else is system code or written
+for Sillen.
+
 ## Why the app only, and why not the App Store
 
 This repository holds the app's presentation, not its source code. I know exactly
