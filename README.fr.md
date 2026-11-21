@@ -270,10 +270,11 @@ positif.
   `raw.githubusercontent.com`, pour lire un fichier de version.
 
 Ouvrez ensuite une issue en précisant le nom de l'antivirus, sa version, le
-chemin exact du fichier signalé et le message. Un faux positif, c'est le
-développeur qui le signale à l'éditeur — Microsoft, WithSecure, Fortinet, ESET et
-les autres ont tous un formulaire pour cela — et il disparaît à la mise à jour
-des définitions. Le signaler ici aussi, c'est ce qui permet de le corriger.
+chemin exact du fichier signalé et le message. Si c'est bien un faux positif, le
+signaler à l'éditeur est le travail du développeur — Microsoft, WithSecure,
+Fortinet, ESET et les autres ont tous un formulaire pour cela — et la correction
+arrive en général à la mise à jour des définitions. Le signaler ici aussi, c'est
+ce qui permet de le traiter.
 
 ## Vérifier avec d'autres moteurs
 
@@ -298,9 +299,9 @@ regardez trois choses.
   autre chose, et je veux en être informé.
 
 Si votre analyse tombe dans ce dernier cas, ouvrez une issue avec le lien du
-rapport. Une détection heuristique se signale à l'éditeur et se corrige à la mise
-à jour des définitions. Une vraie trouvaille resterait une vraie trouvaille, et je
-préfère l'apprendre ainsi.
+rapport. Une détection heuristique peut être signalée à l'éditeur, et elle
+disparaît souvent à la mise à jour des définitions. Une détection réelle ne
+disparaîtra pas, et il faudra la traiter. Je préfère l'apprendre de vous.
 
 Une précaution. Ces services conservent ce qu'on leur envoie et le partagent avec
 des partenaires. Ce que vous leur donnez, c'est l'application, déjà publique :
@@ -353,16 +354,17 @@ qu'elle envoie sur le réseau et ce qu'elle garde sur le disque.
 
 La raison de garder le code est simple, et je ne vais pas l'habiller. Sillen est
 le travail d'une seule personne, et sa valeur tient aux heures passées à faire
-ttenir ensemble la capture des fenêtres, le suivi de tête et la scène. Je le garde
+tenir ensemble la capture des fenêtres, le suivi de tête et la scène. Je le garde
 parce que c'est ce travail.
 
-Ce que je ne prétends pas, c'est que ce choix soit gratuit. La notarisation
-d'Apple prouve que le fichier téléchargé est celui que j'ai signé, et que
-l'analyse n'y a rien trouvé. Ce n'est pas un audit de ce que l'application fait
-quand elle tourne, et cela ne remplace pas quelqu'un qui lirait le code. Un
-lecteur en saurait plus que ce que vous pouvez savoir aujourd'hui. C'est le prix
-du code gardé, et je préfère le nommer plutôt que le cacher derrière une
-signature.
+Ce que je ne prétends pas, c'est que ce choix soit gratuit. La signature prouve
+que l'application est intacte et qu'elle vient de moi, et la notarisation
+qu'Apple l'a analysée sans rien y trouver. Ce qu'elle ne prouve pas, c'est que le
+fichier téléchargé est celui que j'ai publié : c'est à cela que sert l'empreinte
+donnée plus haut. Rien de tout cela n'est un audit de ce que l'application fait
+quand elle tourne, et rien ne remplace quelqu'un qui lirait le code. Un lecteur en
+saurait plus que ce que vous pouvez savoir aujourd'hui. C'est le prix du code
+gardé, et je préfère le dire plutôt que de le taire.
 
 L'App Store est une autre affaire, et ce n'est pas un choix de ma part. Sillen
 doit agir sur d'autres applications, par exemple ramener une fenêtre réduite ou

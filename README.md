@@ -265,10 +265,10 @@ plenty there to produce a false positive.
   `raw.githubusercontent.com`, to read a version file.
 
 Then open an issue with the antivirus name, its version, the exact file it
-flagged and the message. A false positive is reported by the developer to the
-vendor — Microsoft, WithSecure, Fortinet, ESET and the others all have a form
-for this — and it disappears in a definition update. Reporting it here as well is
-what gets it fixed.
+flagged and the message. If it turns out to be a false positive, reporting it to
+the vendor is the developer's job — Microsoft, WithSecure, Fortinet, ESET and the
+others all have a form for this — and the correction usually arrives in a
+definition update. Telling me about it here as well is what gets it looked at.
 
 ## Scanning it with other engines
 
@@ -291,9 +291,9 @@ three things.
   and scans, is another matter and I want to be told about it.
 
 If your scan falls in that last case, open an issue with the link to the report.
-A heuristic detection is reported to the vendor and corrected in a definition
-update. A real find would remain a real find, and I would rather learn about it
-that way.
+A heuristic detection can be reported to the vendor, and it often disappears in a
+definition update. A real detection would not disappear, and it would have to be
+dealt with. I would rather learn about that from you.
 
 One caution. These services keep what is sent to them and share it with partners.
 What you send is the app, which is already public, so nothing of yours is
@@ -346,12 +346,13 @@ The reason for keeping the code is simple, and I will not dress it up. Sillen is
 one person's work, and its value lies in the hours spent making window capture,
 head tracking and the scene hold together. I keep it because it is that work.
 
-What I will not claim is that this choice is free. Apple's notarization proves
-that the file you downloaded is the one I signed, and that the scanner found
-nothing in it. It is not an audit of what the app does while it runs, and it does
-not replace someone reading the code. A reader would know more than you can know
-today. That is the price of keeping the source, and I prefer to name it rather
-than hide it behind a signature.
+What I will not claim is that this choice is free. The signature proves that the
+app is intact and that it comes from me, and notarization that Apple scanned it
+and found nothing. What neither proves is that the file you downloaded is the one
+I published — that is what the hash on this page is for. None of it is an audit of
+what the app does while it runs, and none of it replaces someone reading the
+code. A reader would know more than you can know today. That is the price of
+keeping the source, and I prefer to say so rather than leave it unsaid.
 
 The App Store is another matter, and it is not a choice I made. Sillen has to act
 on other applications, for instance bringing back a minimised window or passing a
